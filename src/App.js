@@ -1,4 +1,4 @@
-import React, { useState, message } from "react";
+import React, { useState} from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "./App.css";
 import {
@@ -8,7 +8,7 @@ import {
   specialCharacters,
 } from "./Characters";
 import "react-toastify/dist/ReactToastify.css";
-import { COPY_SUCEESS } from "./Message";
+import { COPY_SUCEESS } from "./message";
 
 function App() {
   const [password, setPassword] = useState("");
@@ -63,16 +63,6 @@ function App() {
     document.execCommand("copy");
     newTextArea.remove();
   };
-  toast.error(message, {
-    position: "top-center",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-  });
-
   const notify = (message, hasError = false) => {
     if (hasError) {
       toast.error(message, {
